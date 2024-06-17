@@ -28,6 +28,8 @@ int fib(int x)
     {
         auto val = fib(x-1) + fib(x-2);
 
+        std::cout << "fib = " << val << std::endl;
+
         kutrace::mark_a("write");
         res.first->second = val;
     }
@@ -43,11 +45,6 @@ int main (int argc, const char** argv) {
     kutrace::mark_a("main");
 
     auto res = fib(20);
-
-    kutrace::mark_a("out");
-    // std::cout << "fib = " << res << std::endl;
-    printf("fib = %i", res);
-    kutrace::mark_b("/out");
 
     kutrace::mark_b("/main");
 
